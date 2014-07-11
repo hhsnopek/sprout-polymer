@@ -71,7 +71,7 @@ exports.after = (sprout, done) ->
   else if sprout.config_values.advance is true
     for type, file of advanceFiles
       if file isnt 'Makefile'
-        fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.config_values.name}.#{type}"))
+        fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "src/#{sprout.config_values.name}.#{type}"))
         sprout.remove path.join(sprout.target, file)
 
   console.log 'renaming files...'
