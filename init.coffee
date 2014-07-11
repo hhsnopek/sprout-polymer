@@ -1,4 +1,4 @@
-fs = require 'fs'
+fs = require 'fs-extra'
 
 exports.before = (sprout, done) ->
   console.log """
@@ -44,28 +44,30 @@ exports.configure = [
 exports.after = (sprout, done) ->
   console.log 'renaming files...'
   files = {
-    html: 'example.html'
-    css: 'example.css'
+    html: './example.html'
+    css: './example.css'
   }
 
   advanceFiles = {
-    jade: 'example.jade'
-    styl: 'example.styl'
-    Makefile: 'Makefile'
+    jade: './example.jade'
+    styl: './example.styl'
+    Makefile: './Makefile'
   }
 
   for type, file of files
-    fs.rename(file, "#{sprout.name}.#{type}", (err) -> console.log err)
+    fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.name}.#{type}"))
+    sprout.remove file
 
   unless sprout.advance
     console.log 'remove unnecessary files...'
     for type, file of advanceFiles
-      sprout.remove file
+      sprout.remove path.join(sprout.target, file)
 
   else
     for type, file of advanceFiles
       if file isnt 'Makefile'
-        fs.rename(file, "#{sprout.name}.#{type}", (err) -> console.log err)
+        fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.name}.#{type}"))
+        sprout.remove path.join(sprout.target, file)
 
   console.log 'done!'
   if sprout.advance
