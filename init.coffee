@@ -22,6 +22,7 @@ exports.before = (sprout, done) ->
 ........::::::::.......:=======.........
 
     http://www.polymer-project.org/
+
   """
   done()
 
