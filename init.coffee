@@ -45,28 +45,28 @@ exports.configure = [
     type: 'confirm',
     name: 'advance',
     message: 'Would you like to use Jade & Stylus?',
-    default: true
+    default: false
   }
 ]
 
 exports.after = (sprout, done) ->
   console.log 'renaming files...'
   files = {
-    html: './example.html'
-    css: './example.css'
+    html: 'example.html'
+    css: 'example.css'
   }
 
   advanceFiles = {
-    jade: './example.jade'
-    styl: './example.styl'
-    Makefile: './Makefile'
+    jade: 'example.jade'
+    styl: 'example.styl'
+    Makefile: 'Makefile'
   }
 
   for type, file of files
     fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.name}.#{type}"))
     sprout.remove path.join(sprout.target, file)
 
-  unless sprout.advance
+  if sprout.advance isnt true
     console.log 'remove unnecessary files...'
     for type, file of advanceFiles
       sprout.remove path.join(sprout.target, file)
