@@ -5,7 +5,7 @@ A basic sprout template for polymer components
 ### Installation
 
 - `npm install sprout -g`
-- `sprout add node https://github.com/hhsnopek/sprout-polymer.git`
+- `sprout add polymer https://github.com/hhsnopek/sprout-polymer.git`
 
 ### Options
 
