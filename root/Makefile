@@ -1,11 +1,11 @@
 install:
-	echo "installing dependencies..."; \
+	@echo "installing dependencies..."; \
 	npm install uglify-js -g; \
 	npm install clean-css -g; \
 	npm install jade -g; \
 	npm install coffee -g; \
 	bower install; \
-	echo "done!"; \
+	@echo "done!"; \
 
 build:
 	@echo "compiling..."
