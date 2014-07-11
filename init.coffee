@@ -3,9 +3,9 @@ path = require 'path'
 
 exports.before = (sprout, done) ->
   console.log """
-.......++++++++........+++++++~~........
-......++++++++........++++++++~~~.......
-.....++++++++........++++++++~~~~~......
+.......+++++???........+++++++~~........
+......+++++?++........+++?++++~~~.......
+.....++++++??........+++++?++~~~~~......
 ....++++++++........++++++++~~~~~~~.....
 ...=+++++++........=+++++++.~~~~~~~?....
 ..===+++++........===+++++...~~~~~???...
@@ -18,8 +18,9 @@ exports.before = (sprout, done) ->
 ....::::::::~~~~~~~........========.....
 .....::::::::~~~~~........========......
 ......::::::::~~~........~=======.......
-.......::::::::~........~=======........
+.......::::::::~,.......~=======........
 ........::::::::.......:=======.........
+
     http://www.polymer-project.org/
   """
   done()
@@ -28,7 +29,7 @@ exports.configure = [
   {
     type: 'input',
     name: 'name',
-    message: 'What is the name of your project?'
+    message: 'What is the name of your component?'
   },
   {
     type: 'input',
@@ -38,7 +39,7 @@ exports.configure = [
   {
     type: 'input',
     name: 'description',
-    message: 'Describe your project'
+    message: 'Describe your component'
   },
   {
     type: 'confirm',
@@ -55,8 +56,8 @@ exports.after = (sprout, done) ->
   }
 
   advanceFiles = {
-    jade: 'example.jade'
-    styl: 'example.styl'
+    jade: 'src/example.jade'
+    styl: 'src/example.styl'
     Makefile: 'Makefile'
   }
 
