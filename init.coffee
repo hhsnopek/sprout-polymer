@@ -62,12 +62,9 @@ exports.after = (sprout, done) ->
     Makefile: 'Makefile'
   }
 
-  for type, file of files
-    fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.name}.#{type}"))
-    sprout.remove path.join(sprout.target, file)
-
   if sprout.advance isnt true
     console.log 'remove unnecessary files...'
+
     for type, file of advanceFiles
       sprout.remove path.join(sprout.target, file)
 
@@ -76,6 +73,10 @@ exports.after = (sprout, done) ->
       if file isnt 'Makefile'
         fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.name}.#{type}"))
         sprout.remove path.join(sprout.target, file)
+
+  for type, file of files
+    fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.name}.#{type}"))
+    sprout.remove path.join(sprout.target, file)
 
   console.log 'done!'
   if sprout.advance
