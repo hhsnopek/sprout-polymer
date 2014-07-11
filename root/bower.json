@@ -1,5 +1,5 @@
 {
-  "name": "<% name %>",
+  "name": "<%= name %>",
   "version": "0.0.0",
   "authors": [
     "Carrot Creative <dev@carrotcreative.com>"
@@ -8,11 +8,11 @@
     "type": "git",
     "url": "https://github.com/<%= github_username %>/<%= name %>.git"
   },
-  "description": "<% description %>",
-  "keywords": "<% name %>, polymer, web-components",
-  "main": "<% name %>.html",
+  "description": "<%= description %>",
+  "keywords": "<%= name %>, polymer, web-components",
+  "main": "<%= name %>.html",
   "license": "MIT",
-  "homepage": "https://github.com/<% github_username %>/<% name %>/",
+  "homepage": "https://github.com/<%= github_username %>/<%= name %>/",
   "ignore": [
     "**/.*"
   ],
