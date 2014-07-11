@@ -1,0 +1,22 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="<% name %>" attributes="">
+
+  <template>
+
+    <link rel="stylesheet" href="<% name %>.css" />
+
+    <h1>Hello from <% name %></h1>
+    <content></content>
+
+  </template>
+
+  <script>
+
+    Polymer('<% name %>', {
+      ready: function() {
+        console.log('<% name %> is ready!')
+      }
+  </script>
+
+</polymer-element>

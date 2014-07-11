@@ -1,0 +1,23 @@
+{
+  "name": "<% name %>",
+  "version": "0.0.0",
+  "authors": [
+    "Carrot Creative <dev@carrotcreative.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= github_username %>/<%= name %>.git"
+  },
+  "description": "<% description %>",
+  "keywords": "<% name %>, polymer, web-components",
+  "main": "<% name %>.html",
+  "license": "MIT",
+  "homepage": "https://github.com/<% github_username %>/<% name %>/",
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.3",
+    "polymer-test-tools": "Polymer/polymer-test-tools#~0.3.3"
+  }
+}
