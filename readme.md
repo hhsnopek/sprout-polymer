@@ -12,4 +12,4 @@ A basic sprout template for polymer components
 - **name** (name of template)
 - **github_username** (name of github user)
 - **description** (a short description of the template)
-- **advance** (true or false)
+- **advance** (use Jade & Stylus with a Makefile for compilation)
