@@ -5,12 +5,14 @@ install:
 	npm install jade -g; \
 	npm install coffee -g; \
 	bower install; \
-	echo ""; \
+	echo "done!"; \
 
 build:
 	@echo "compiling..."
-	@jade < <% name %>.jade > <% name %>.html
-	@coffee < <% name %>.coffee -o <% name %>.js
+	@rm <% name %>.html
+	@rm <% name %>.css
+	@jade < /src/<% name %>.jade > ./<% name %>.html
+	@coffee < /src/<% name %>.coffee -o ./<% name %>.js
 	@echo "done!"
 
 @PHONY .install
