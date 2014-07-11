@@ -15,4 +15,4 @@ build:
 	@coffee < /src/<% name %>.coffee -o ./<% name %>.js
 	@echo "done!"
 
-@PHONY .install
+.PHONY: install
