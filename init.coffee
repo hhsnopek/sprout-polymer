@@ -41,12 +41,6 @@ exports.configure = [
     type: 'input',
     name: 'description',
     message: 'Describe your component'
-  },
-  {
-    type: 'confirm',
-    name: 'advance',
-    message: 'Would you like to use Jade & Stylus?',
-    default: true
   }
 ]
 
@@ -56,33 +50,11 @@ exports.after = (sprout, done) ->
     css: 'example.css'
   }
 
-  advanceFiles = {
-    jade: 'src/example.jade'
-    styl: 'src/example.styl'
-    Makefile: 'Makefile'
-  }
-
-  if not sprout.config_values.advance is true
-    console.log 'remove unnecessary files...'
-
-    for type, file of advanceFiles
-      sprout.remove path.join(sprout.target, file)
-
-  else if sprout.config_values.advance is true
-    for type, file of advanceFiles
-      if file isnt 'Makefile'
-        fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "src/#{sprout.config_values.name}.#{type}"))
-        sprout.remove path.join(sprout.target, file)
-
   console.log 'renaming files...'
   for type, file of files
-    fs.copySync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.config_values.name}.#{type}"))
-    sprout.remove path.join(sprout.target, file)
+    fs.renameSync(path.join(sprout.target, file), path.join(sprout.target, "#{sprout.config_values.name}.#{type}"))
 
   console.log 'done!'
-  if sprout.config_values.advance
-    console.log 'Run `make install` to complete setup'
-  else
-    console.log 'Run `bower install` to complete setup'
+  console.log 'Run `bower install` to complete setup'
 
   done()
