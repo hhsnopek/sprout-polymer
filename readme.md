@@ -12,4 +12,8 @@ A basic sprout template for polymer components
 - **name** (name of template)
 - **github_username** (name of github user)
 - **description** (a short description of the template)
-- **advance** (use Jade & Stylus with a Makefile for compilation)
+
+### Usage
+- `sprout init polymer`
+- `cd path/to/project`
+- `bower install`
