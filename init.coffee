@@ -1,4 +1,3 @@
-fs = require 'fs-extra'
 path = require 'path'
 
 exports.before = (sprout, done) ->
@@ -40,7 +39,19 @@ exports.configure = [
   {
     type: 'input',
     name: 'description',
-    message: 'Describe your component'
+    message: 'Describe your component:'
+  },
+  {
+    type: 'list',
+    name: 'html',
+    message: 'What templating language would you like to use?',
+    choices: [ 'html', 'jade', 'ejs', 'mustache/hogan', 'handlebars', 'haml', 'swig' ]
+  },
+  {
+    type: 'list',
+    name: 'css',
+    message: 'What stylesheet language would you like to use?',
+    choices: [ 'css', 'stylus', 'sass', 'less' ]
   }
 ]
 

@@ -11,8 +11,5 @@
   "bugs": {
     "url": "https://github.com/HHSnopek/sprout-polymer/issues"
   },
-  "homepage": "https://github.com/HHSnopek/sprout-polymer",
-  "dependencies": {
-    "fs-extra": "^0.10.0"
-  }
+  "homepage": "https://github.com/HHSnopek/sprout-polymer"
 }
