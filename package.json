@@ -13,6 +13,6 @@
   },
   "homepage": "https://github.com/HHSnopek/sprout-polymer",
   "dependencies": {
-    "fs-extra": "^0.10.0"
+    "fs-extra": "^2.1.1"
   }
 }
