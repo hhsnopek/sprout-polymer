@@ -1,5 +1,7 @@
 # sprout-polymer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hhsnopek/sprout-polymer.svg)](https://greenkeeper.io/)
+
 A basic sprout template for polymer components
 
 ### Installation
